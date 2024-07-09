@@ -1,5 +1,5 @@
 {% set version = "0.1.2" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: awex
@@ -34,7 +34,6 @@ requirements:
     - libpython                  # [win]
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - m2w64-gcc-libgfortran      # [win] NB m2w64-gcc-libs and m2w64-gcc-libs-core are added automatically by m2w64 compiler functions under build
 
 
