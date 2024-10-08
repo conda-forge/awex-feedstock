@@ -1,5 +1,5 @@
 {% set version = "0.1.2" %}
-{% set build = 2 %}
+{% set build = 3 %}
 
 package:
   name: awex
@@ -21,6 +21,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - cmake
     - make                                   # [not win]
+    - ninja                                  # [win]
     - {{ compiler('c') }}                    # [not win] NB on windows this would activate Visual Studio and make that the default C/C++ compiler
     - {{ compiler('fortran') }}              # [not win]
     - {{ stdlib("c") }}                      # [not win] on Windows this pulls in VS and causes cmake to use its cl.exe, which is incompatible with the m2w64 version of windres.exe
@@ -36,7 +37,7 @@ requirements:
     - libpython                              # [win]
   run:
     - python
-    - m2w64-gcc-libgfortran                  # [win] NB m2w64-gcc-libs and m2w64-gcc-libs-core are added automatically by m2w64 compiler functions under build
+    #- m2w64-gcc-libgfortran                  # [win] NB m2w64-gcc-libs and m2w64-gcc-libs-core are added automatically by m2w64 compiler functions under build
 
 
 test:
