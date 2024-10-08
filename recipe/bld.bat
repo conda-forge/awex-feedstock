@@ -1,7 +1,7 @@
 
 (
 echo [build_ext]
-echo cmake_opts=-DPython3_EXECUTABLE="%PYTHON%" -DCMAKE_C_COMPILER=gcc -G "MinGW Makefiles"
+echo cmake_opts=-DPython3_EXECUTABLE="%PYTHON%" -DCMAKE_C_COMPILER=gcc -G "Ninja"
 echo compiler=gfortran
 ) > "%SRC_DIR%\setup.cfg"
 
