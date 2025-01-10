@@ -3,11 +3,10 @@ REM set "HOST=x86_64-w64-mingw32"
 REM set "CC=%HOST%-gcc.exe"
 REM set "FC=%HOST%-gfortran.exe"
 
-set FC=flang-new
-
 (
 echo [build_ext]
 echo cmake_opts=-DPython3_EXECUTABLE="%PYTHON%" -G "Ninja"
+echo compiler=flang-new
 ) > "%SRC_DIR%\setup.cfg"
 
 REM set CFLAGS=-DMS_WIN64
