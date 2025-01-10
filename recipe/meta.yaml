@@ -20,8 +20,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - cmake
-    - make                                   # [not win]
-    - ninja                                  # [win]
+    - ninja
     - {{ stdlib("c") }}
     - {{ compiler("c") }}
     - {{ compiler("fortran") }}

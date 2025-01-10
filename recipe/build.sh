@@ -9,7 +9,7 @@ fi
 
 cat > "$SRC_DIR/setup.cfg" << EOF
 [build_ext]
-cmake_opts=-DPython3_EXECUTABLE="${PYTHON}" ${CMAKE_PLATFORM_FLAGS[@]}
+cmake_opts=-DPython3_EXECUTABLE="${PYTHON}" -G "Ninja" ${CMAKE_PLATFORM_FLAGS[@]}
 EOF
 
 export CMAKE_BUILD_PARALLEL_LEVEL=${CPU_COUNT}
