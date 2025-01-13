@@ -5,4 +5,5 @@ echo compiler=%FC%
 ) > "%SRC_DIR%\setup.cfg"
 
 set CMAKE_BUILD_PARALLEL_LEVEL=%CPU_COUNT%
+set VERBOSE=1
 python -m pip install --no-deps -v "%SRC_DIR%"
