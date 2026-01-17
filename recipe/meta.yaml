@@ -1,5 +1,5 @@
-{% set version = "0.1.2" %}
-{% set build = 5 %}
+{% set version = "0.1.4" %}
+{% set build = 0 %}
 
 package:
   name: awex
@@ -8,7 +8,7 @@ package:
 source:
   #git_url: https://github.com/BoldingBruggeman/awex.git
   url: https://github.com/BoldingBruggeman/awex/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 186c589e8840e16a3e9d512a4062c1a346ca59d084fbbcab461a45b925f36f48
+  sha256: a7c9961fb3b21b18125f134e50ddc9dd8d8158fa0a841826b62dfcf337f59778
 
 build:
   number: {{ build }}
