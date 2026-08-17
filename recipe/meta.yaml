@@ -1,5 +1,5 @@
 {% set version = "0.1.4" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: awex
@@ -22,19 +22,17 @@ requirements:
     - cmake
     - make                                   # [not win]
     - ninja                                  # [win]
-    - {{ compiler('c') }}                    # [not win] NB on windows this would activate Visual Studio and make that the default C/C++ compiler
-    - {{ compiler('fortran') }}              # [not win]
-    - {{ stdlib("c") }}                      # [not win] on Windows this pulls in VS and causes cmake to use its cl.exe, which is incompatible with the m2w64 version of windres.exe
-    - {{ compiler('m2w64_c') }}              # [win]
-    - {{ compiler('m2w64_fortran') }}        # [win]
-    - {{ stdlib("m2w64_c") }}                # [win]
+    # uses m2w64 toolchain on windows, see conda_build_config.yaml
+    - {{ stdlib("c") }}
+    - {{ compiler("c") }}
+    - {{ compiler("fortran") }}
   host:
     - python {{ python }}
     - cython
     - pip
     - setuptools
     - numpy
-    - libpython                              # [win]
+    - distutils-activate-mingw               # [win]
   run:
     - python
     #- m2w64-gcc-libgfortran                  # [win] NB m2w64-gcc-libs and m2w64-gcc-libs-core are added automatically by m2w64 compiler functions under build
